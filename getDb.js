@@ -11,7 +11,7 @@ const connect = async () => {
 };
 
 const getDb = async () => {
-  if (!_db) await connect();
+  if (!_db || !client.isConnected()) await connect();
   return _db;
 };
 
