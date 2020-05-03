@@ -18,7 +18,7 @@
 
 - MongoDB isn't the only database that can do the job, it's just the one I preferred here. Most SQL or NoSQL database with the help of an index should be able to complete the word search task very quickly.
 
-## Code Explaination
+## Code Explanation
 
 - [getDb.js](./getDb.js) connects to a MongoDB instance running on localhost on the default port 27017. Then retrieves the database instance called `spelling_bee`. If there's already a connection, return the current database instance.
 
