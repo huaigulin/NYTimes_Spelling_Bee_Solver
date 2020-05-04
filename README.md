@@ -12,9 +12,11 @@
 
 - The word list is downloaded and included in this repo, please see [corncob_lowercase.txt](./corncob_lowercase.txt).
 
+- Another list with much more words (370,000+) is also included in this repo, please see [words_alpla.txt](./words_alpha.txt). This one is from https://github.com/dwyl/english-words.
+
 ## Database
 
-- Obviously looping through the 58000 words list to find a word isn't efficient enough, so we probably need a database and build an index over all the words to speed up the query process.
+- Obviously looping through the 58,000 or 370,000 words list to find a word isn't efficient enough, so we probably need a database and build an index over all the words to speed up the query process.
 
 - MongoDB isn't the only database that can do the job, it's just the one I preferred here. Most SQL or NoSQL database with the help of an index should be able to complete the word search task very quickly.
 
@@ -22,7 +24,7 @@
 
 - [getDb.js](./getDb.js) connects to a MongoDB instance running on localhost on the default port 27017. Then retrieves the database instance called `spelling_bee`. If there's already a connection, return the current database instance.
 
-- [buildDictionary.js](./buildDictionary.js) reads [corncob_lowercase.txt](./corncob_lowercase.txt) line by line and insert each word as a document with the field `word` into the collecton called `dictionary`. It also creates an index on the field `word`. MongoDB automatically creates the database and collection on first insertion if they not exist.
+- [buildDictionary.js](./buildDictionary.js) reads [words_alpla.txt](./words_alpha.txt) line by line and insert each word as a document with the field `word` into the collecton called `dictionary`. It also creates an index on the field `word`. MongoDB automatically creates the database and collection on first insertion if they not exist.
 
 - [app.js](./app.js)
   1. reads all the letters and the center letter from command line input.

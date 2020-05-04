@@ -5,7 +5,7 @@ const fs = require("fs"),
 const insertWords = async () => {
   const db = await getDb();
   const readInterface = readline.createInterface({
-    input: fs.createReadStream("./words_alpha.txt"),
+    input: fs.createReadStream("./words_alpha.txt"), // "./corncob_lowercase.txt"
     output: process.stdout,
     console: false,
   });
